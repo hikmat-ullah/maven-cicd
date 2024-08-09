@@ -1,0 +1,20 @@
+#!/bin/bash
+
+export IMAGE=$(sed -n '1p' /tmp/.auth)
+export TAG=$(sed -n '2p' /tmp/.auth)
+export PASS=$(sed -n '3p' /tmp/.auth)
+
+docker login -u hikmatmarwat -p $PASS
+# cd ~/maven && docker compose up -d
+ 
+#docker run --name maven-app2 hikmatmarwat/$IMAGE:$TAG
+
+echo "Display message then redirect the output to a file"
+
+docker run hikmatmarwat/$IMAGE:$TAG java -jar /app/app.jar
+
+date > /home/admin/message.txt
+
+docker run hikmatmarwat/$IMAGE:$TAG java -jar /app/app.jar >> /home/admin/message.txt
+
+
