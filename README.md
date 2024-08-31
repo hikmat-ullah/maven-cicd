@@ -4,4 +4,4 @@
 ##### Build: This stage builds the docker image
 ##### Test: This stage tests the docker image
 ##### Push: This stage push the docker image
-###### Deploy: and Finally, this stage deploy the docker image to the remote Linux Server using docker compose with Mysql and Phpmyadmin containers
+##### Deploy: and Finally, this stage deploy the docker image to the remote Linux Server using docker compose with Mysql and Phpmyadmin containers
